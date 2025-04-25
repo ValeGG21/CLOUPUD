@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/loandig.css">
+    <link rel="icon" href="/img/LOGO.png">
+    <title>CloudUP</title>
+</head>
+<body>
+    <a href="/" class="LOGO"><img src="/img/LOGO.png" alt="Logo"></a>
+    <div class="wrapper">
+        <div class="from-wrapper sign-in">
+            <form action="/loginAdmin" method="POST">
+                <h2>Administrador</h2>
+                <div class="input-group">
+                    <input type="email" name="correo" required>
+                    <label for="">Correo</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="contraseña"required>
+                    <label for="">Contraseña</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="clave_especial"required>
+                    <label for="">Clave</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox">
+                        Recuerda mi usuario</label>
+                </div>
+                <button type="submit">ENTRAR</button>
+                <div class="signUp-link">
+                    <p>No tienes una cuenta?<a href="/register" class="signUpbtn-link"> Registrate</a></p>
+                    
+                    <p>Eres programador?<a href="/loginProgramin"> Inicia sesion</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

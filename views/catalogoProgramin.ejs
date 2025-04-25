@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/programin.css">
+    <link rel="icon" href="/public/img/LOGO.png">
+    <title>Catalogo Programador</title>
+</head>
+<body>
+    <header class="header">
+        <div class="menu_container">
+            <img src="/img/LOGO.png" alt="Logo CloudUP">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/perfil">Perfil</a></li>
+                    <li><a href="/views/subirSoftware">Subir Software</a></li>
+                    <li><a href="/logout">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content container">
+            <div class="header-text">
+              <h1>Bienvenido, Programador</h1>
+              <p>Explora tus aportes, gestiona tus softwares y sube tus desarrollos</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="Software_des container" id="Servicio">
+        <h2>PRODUCTOS DESTACADOS</h2>
+        <div class="software-content">
+            <img src="/img/LOGO.jpeg" alt="Destacado 1" class="open-modal" data-title="Destacado 1" data-description="Gestión de proyectos avanzada.">
+            <img src="/img/LOGO.jpeg" alt="Destacado 2" class="open-modal" data-title="Destacado 2" data-description="Control de versiones integrado.">
+            <img src="/img/LOGO.jpeg" alt="Destacado 3" class="open-modal" data-title="Destacado 3" data-description="Automatización de tareas.">
+            <img src="/img/LOGO.jpeg" alt="Destacado 4" class="open-modal" data-title="Destacado 4" data-description="Panel de estadísticas.">
+            <img src="/img/LOGO.jpeg" alt="Destacado 5" class="open-modal" data-title="Destacado 5" data-description="Integración CI/CD.">
+            <img src="/img/LOGO.jpeg" alt="Destacado 6" class="open-modal" data-title="Destacado 6" data-description="Soporte multiplataforma.">
+            <img src="/img/LOGO.jpeg" alt="Destacado 7" class="open-modal" data-title="Destacado 7" data-description="Alertas en tiempo real.">
+        </div>
+    </section>
+
+    <main class="product container" id="Productos">
+        <h2>Todos los productos</h2>
+        <div class="product-content">
+            <div class="product-1">
+                <img src="/img/LOGO.jpeg" alt="Software lorem" class="open-modal" data-title="Software lorem" data-description="Este software es ideal para gestión de proyectos.">
+                <div class="product-txt">
+                    <h3>Software lorem</h3>
+                    <div class="price">
+                        <p>$95.80</p>
+                        <a href="#" class="btn-2">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-1">
+                <img src="/img/LOGO.jpeg" alt="Software ipsum" class="open-modal" data-title="Software ipsum" data-description="Descripción de Software ipsum.">
+                <div class="product-txt">
+                    <h3>Software ipsum</h3>
+                    <div class="price">
+                        <p>$85.50</p>
+                        <a href="#" class="btn-2">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-1">
+                <img src="/img/LOGO.jpeg" alt="Software dolor" class="open-modal" data-title="Software dolor" data-description="Descripción de Software dolor.">
+                <div class="product-txt">
+                    <h3>Software dolor</h3>
+                    <div class="price">
+                        <p>$120.00</p>
+                        <a href="#" class="btn-2">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-1">
+                <img src="/img/LOGO.jpeg" alt="Software amet" class="open-modal" data-title="Software amet" data-description="Descripción de Software amet.">
+                <div class="product-txt">
+                    <h3>Software amet</h3>
+                    <div class="price">
+                        <p>$110.25</p>
+                        <a href="#" class="btn-2">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-1">
+                <img src="/img/LOGO.jpeg" alt="Software elit" class="open-modal" data-title="Software elit" data-description="Descripción de Software elit.">
+                <div class="product-txt">
+                    <h3>Software elit</h3>
+                    <div class="price">
+                        <p>$99.99</p>
+                        <a href="#" class="btn-2">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="link">
+            <ul>
+              <li><a href="/logout">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- ====== MODAL ====== -->
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-body">
+          <div class="modal-image">
+            <img src="" alt="Software" id="modal-img">
+          </div>
+          <div class="modal-info">
+            <h2 id="modal-title">SOFTWARE</h2>
+            <p id="modal-text">Descripción</p>
+            <p>Fecha de publicación: 25/04/2025</p>
+            <br>
+            <input type="submit" class="modal-btn" value="Contactar programador">
+            <input type="submit" class="modal-btn" value="Comprar">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== SCRIPT MODAL ====== -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const modal      = document.getElementById("modal");
+        const modalImg   = document.getElementById("modal-img");
+        const modalTitle = document.getElementById("modal-title");
+        const modalText  = document.getElementById("modal-text");
+        const closeBtn   = modal.querySelector(".close");
+        const triggers   = document.querySelectorAll(".open-modal");
+
+        triggers.forEach(el => {
+          el.addEventListener("click", () => {
+            modalImg.src      = el.src;
+            modalImg.alt      = el.alt;
+            modalTitle.textContent = el.dataset.title;
+            modalText.textContent  = el.dataset.description;
+            modal.classList.add("show");
+          });
+        });
+
+        closeBtn.addEventListener("click", () => modal.classList.remove("show"));
+        window.addEventListener("click", e => { if (e.target === modal) modal.classList.remove("show"); });
+      });
+    </script>
+</body>
+</html>

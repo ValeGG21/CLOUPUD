@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/encargo.css">
+    <link rel="icon" href="/img/LOGO.png">
+  
+    <title>Encargo</title>
+</head>
+<body>
+    <header>
+        <div class="titulo"><h1>Formulario De Encargo</h1></div>
+    </header>
+    <header class="header">
+        <div class="menu container">
+            <input type="checkbox" id="menu"/>
+            <nav class="navbar">
+                <ul>
+                    <li style="
+    margin-right: 0px;
+    border-right-width: 6px;
+    padding-right: 53px;
+    padding-left: 886px;
+"><a href="/catalogo">Catalogo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="row">
+    <form action="/encargo" method="GET">
+        <div class="formulario col-md-8">
+            <div class="conta">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br>
+
+                <label for="emal">Coreeo Electronico:</label>
+                <input type="email" id="email" name="email" required><br>
+            </div>
+            <div class="des">
+                <label for="descripcion">Descripcion:</label>
+                <textarea id="descripcion" name="descripcion" required></textarea><br>
+            </div>
+            <div class="pri">
+                <label for="prioridad">Prioridad:</label>
+                <select name="prioridad" id="prioridad" required>
+                    <option value="baja">Baja</option>
+                    <option value="media">Media</option>
+                    <option value="alta">Alta</option>
+                </select><br>
+            </div>
+        </div>
+        <div class="boton">
+            <button type="submit" onclick="validarFormulario()">ENCARGAR</button>
+        </div>
+    </form>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+</body>
+</html>

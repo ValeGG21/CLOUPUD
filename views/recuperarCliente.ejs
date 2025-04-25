@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/recuCliente.css">
+    <title>Recuperar Contraseña</title>
+</head>
+<body>
+    <div class="form-container">
+        <h2>¿Olvidaste tu contraseña?</h2>
+        <form id="forgotForm" method="POST" action="/forgot-password">
+          <div class="input-group container">
+            <input type="email" name="email" placeholder="Ingresa tu correo" required>
+            <button type="submit">Enviar enlace de recuperación</button>
+          </div>
+        </form>
+        <div class="message">Recibirás un correo con instrucciones si el email está registrado.</div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/listado.css">
+    <link rel="icon" href="/img/LOGO.png">
+    <title>CloudUP</title>
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <a href="/" class="LOGO"><img src="/img/LOGO.png" alt=""></a>
+            <input type="checkbox" id="menu"/>
+            <label for="menu">
+                <img src="/img/Icono Menu.png" class="menu-icono" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/catalogoAdmin">Regresar</a></li>
+                    <li><a href="#Servicio">Servicio</a></li>
+                    <li><a href="#Productos">Productos</a></li>
+                    <li><a href="#Contacto">Contacto</a></li>
+                    <li><a href="/logout">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+        <div class="h2">
+            <h2>Listado de los Programadores</h2>
+        </div>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Usuario</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (programadores && programadores.length > 0) { %>
+                    <% programadores.forEach(programador => { %>
+                        <tr>
+                            <td><%= programador.nombre %></td>
+                            <td><%= programador.apellido %></td>
+                            <td><%= programador.correo %></td>
+                            <td><%= programador.telefono %></td>
+                            <td><%= programador.nombre_usuario %></td>  
+                            <td><%= programador.activo ? 'Activo' : 'Inactivo' %></td>
+                            <td>
+                                <!-- Aquí puedes agregar botones de acciones como editar o eliminar -->
+                                <a href="/editar/<%= programador.id_programador %>" class="editar-link">Editar</a>
+                                <form action="/eliminar-programador/<%= programador.id_programador %>" method="POST" style="display:inline;">
+                                    <button type="submit" class="eliminar-btn">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }); %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="6">No hay programadores disponibles</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+        
+    </main>
+</body>
+</html>

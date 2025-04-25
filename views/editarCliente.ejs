@@ -1,0 +1,50 @@
+<!-- editarCliente.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/editarCliente.css">
+    <title>CloudUP</title>
+</head>
+<body>
+    <div class="caja_title">
+        <h1 class="title">Editar Cliente</h1>
+    </div>
+    <form action="/clientes/editar/<%= cliente.id_cliente %>" method="POST">
+        <div class="input-group">
+            <input type="text" id="nombre" name="nombre" value="<%= cliente.nombre %>" required>
+            <label for="nombre">Nombre:</label>
+        </div>
+        <div class="input-group">
+            <input type="text" id="apellido" name="apellido" value="<%= cliente.apellido %>" required>
+            <label for="apellido">Apellido:</label>
+        </div>
+        <div class="input-group">
+            <input type="email" id="correo" name="correo" value="<%= cliente.correo %>" required>
+            <label for="correo">Correo:</label>
+        </div>
+        <div class="input-group">
+            <input type="text" id="contraseña" name="contraseña" value="<%= cliente.contraseña %>" required>
+            <label for="contraseña">Contraseña:</label>
+        </div>
+        <button type="submit">Guardar Cambios</button>
+        <button class="a" ><a href="/listado-clientes" class="letra">Cancelar</a></button>
+    </form>
+
+    <script>
+        // Agregar evento input para verificar si hay valor y ajustar el label
+        const inputs = document.querySelectorAll('.input-group input');
+        inputs.forEach(input => {
+            input.addEventListener('input', function() {
+                const label = this.nextElementSibling;
+                if (this.value !== '') {
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

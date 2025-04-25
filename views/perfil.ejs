@@ -1,0 +1,34 @@
+<!-- perfil.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/css/perfil.css"/>
+  <title>Perfil</title>
+</head>
+<body>
+  <div class="menu">
+    <div class="LOGO">Perfil</div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/catalogoProgramin">Inicio</a></li>
+        <li><a href="/editar">Editar Perfil</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="contact">
+    <div class="contact-content">
+      <h2><%= user.nombre %></h2>
+      <!--<p><strong>Especialidad:</strong> <%= user.especialidad %></p>
+      <p><strong>Skills:</strong> <%= user.skills %></p>-->
+      <p><strong>Email:</strong> <%= user.email %></p>
+      <!--<% if (data.photo) { %>
+        <img src="/<%= data.photo %>" alt="Foto de perfil" class="profile-photo">
+      <% } %>-->
+      <a href="/editar" class="btn-2">Editar Perfil</a>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!-- editarProgramador.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/editar.css">
+    <title>CloudUP</title>
+</head>
+<body>
+    <div class="Cajatitulo">
+        <h1 class="titulo">Editar Programador</h1>
+    </div>
+    
+    <form action="/programadores/editar/<%= programador.id_programador %>" method="post">
+        <div class="input-group">
+            <input type="text" id="nombre" name="nombre" value="<%= programador.nombre %>" required>
+            <label for="nombre" class="<%= programador.nombre ? 'active' : '' %>">Nombre:</label>
+        </div>
+        <div class="input-group">
+            <input type="text" id="apellido" name="apellido" value="<%= programador.apellido %>" required>
+            <label for="apellido" class="<%= programador.apellido ? 'active' : '' %>">Apellido:</label>
+        </div>
+        <div class="input-group">
+            <input type="email" id="correo" name="correo" value="<%= programador.correo %>" required>
+            <label for="correo" class="<%= programador.correo ? 'active' : '' %>">Correo:</label>
+        </div>
+        <div class="input-group">
+            <input type="text" id="telefono" name="telefono" value="<%= programador.telefono %>" required>
+            <label for="telefono" class="<%= programador.telefono ? 'active' : '' %>">Teléfono:</label>
+        </div>
+        <div class="input-group">
+            <input type="text" id="nombre_usuario" name="nombre_usuario" value="<%= programador.nombre_usuario %>" required>
+            <label for="nombre_usuario" class="<%= programador.nombre_usuario ? 'active' : '' %>">Nombre de Usuario:</label>
+        </div>
+        <div class="input-group">
+            <input type="text" id="contraseña" name="contraseña" value="<%= programador.contraseña %>" required>
+            <label for="contraseña" class="<%= programador.contraseña ? 'active' : '' %>">Contraseña:</label>
+        </div>
+        <button type="submit">Guardar cambios</button>
+        <button class="a" href="/listado-programadores"><a href="/listado-programadores" class="letra">Cancelar</a></button>
+    </form>
+
+    <script>
+        // Agregar evento input para verificar si hay valor y ajustar el label
+        const inputs = document.querySelectorAll('.input-group input');
+        inputs.forEach(input => {
+            input.addEventListener('input', function() {
+                const label = this.nextElementSibling;
+                if (this.value !== '') {
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

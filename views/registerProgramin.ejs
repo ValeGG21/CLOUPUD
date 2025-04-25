@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/resProgramin.css">
+    <link rel="icon" href="/img/LOGO.png">
+    <title>CloudUP</title>
+</head>
+<body>
+    <a href="/register" class="LOGO"></a>
+    <div class="wrapper"></div>
+    <div class="from-wrapper sign-up">
+        <form action="/registerProgramin" method="POST">
+            <h2>REGISTRATE</h2>
+            <div class="input-group">
+                <input type="text" name="nombre" required>
+                <label for="">Nombre</label>
+            </div>
+            <div class="input-group">
+                <input type="text" name="apellido" required>
+                <label for="">Apellido</label>
+            </div>
+            <div class="input-group">
+                <input type="email" name="correo" required>
+                <label for="">Correo</label>
+            </div>
+            <div class="input-group">
+                <input type="text" name="nombre_usuario" required>
+                <label for="">Nombre Usuario</label>
+            </div>
+            <div class="input-group">
+                <input type="password" name="contraseña" required>
+                <label for="">Contraseña</label>
+            </div>
+            <div class="input-group">
+                <input type="text" name="telefono" required>
+                <label for="">Teléfono</label>
+            </div>
+            <div class="remember">
+                <label><input type="checkbox">
+                Estoy de acuerdo con lo terminos
+                y condiciones</label>
+            </div>            
+            <button type="submit">REGISTRAR</button>
+            <div class="signUp-link">
+                <p>Ya estas registrado? <a href="/loginProgramin" 
+                class="signInbtn-link"> iniciar sesión</a></p>
+            </div>
+</body>
+</html> 
